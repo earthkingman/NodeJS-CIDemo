@@ -5,7 +5,7 @@ let users = [
 ]
 
 const index = (req, res) => {
-    req.query.limit = 10;
+    req.query.limit = req.query.limit || 10;
     const limit = parseInt(req.query.limit, 10);
 
     if (Number.isNaN(limit)) {
